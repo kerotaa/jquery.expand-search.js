@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<link rel="stylesheet" href="css/jquery.expand-search.css">
+	<style>
+	body {
+		padding: 50px 0;
+	}
+
+	h1 {
+		font-size: 3em;
+		margin-bottom: 1em;
+	}
+	.search-box input[type=text] {
+		border-radius: 3px;
+		font-size: 30px;
+		border: 1px solid #ddd;
+		padding: .5em 1em;
+	}
+	pre {
+		margin-bottom: 3em;
+		padding: 1em;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		background-color: #f6f6f6;
+		overflow: auto;
+	}
+	footer {
+		margin-top: 100px;
+		padding-top: 30px;
+		border-top: 1px solid #eee;
+	}
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 640px) {
+		.container {
+			width: auto;
+			padding: 0 20px;
+		}
+		.search-box input[type=text] {
+			display: block;
+			width: 100%;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-o-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+
+<h1>jQuery Expand Search</h1>
+
+<h2>Demo</h2>
+
+<form class="search-box">
+	<div class="btn-close"></div>
+	<p>
+		<input type="text" value="" placeholder="Search" data-active-placeholder="Type to search...">
+	</p>
+	<p class="help">
+		Press <strong>return</strong> to search. Press <strong>Esc</strong> to cancel.
+	</p>
+</form>
+
+<h2>Usage</h2>
+
+<h3>1. Import StyleSheet</h3>
+<pre><code>&lt;link&nbsp;rel=&quot;stylesheet&quot;&nbsp;href=&quot;jquery.expand-search.css&quot;&gt;</code></pre>
+
+<h3>2. Markup</h3>
+<pre><code>&lt;form&nbsp;class=&quot;search-box&quot;&gt;
+	&lt;div&nbsp;class=&quot;btn-close&quot;&gt;&lt;/div&gt;
+	&lt;p&gt;
+		&lt;input&nbsp;type=&quot;text&quot;&nbsp;value=&quot;&quot;&nbsp;placeholder=&quot;Search&quot;&nbsp;data-active-placeholder=&quot;Type&nbsp;to&nbsp;search...&quot;&gt;
+	&lt;/p&gt;
+	&lt;p&nbsp;class=&quot;help&quot;&gt;
+		Press&nbsp;&lt;strong&gt;return&lt;/strong&gt;&nbsp;to&nbsp;search.&nbsp;Press&nbsp;&lt;strong&gt;Esc&lt;/strong&gt;&nbsp;to&nbsp;cancel.
+	&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+<h3>3. JavaScript</h3>
+<pre><code>$(function() {
+	$('.search-box').expandSearch(options);
+});</code></pre>
+
+<h2>Options</h2>
+<pre><code>{
+	"CloseButton": ".btn-close",
+	"TextField": "input[type=text]",
+	"ActiveClassName": "active"
+}</code></pre>
+
+<h2>Manual switch</h2>
+<pre><code>$(selector).data('expandSearch').off();
+$(selector).data('expandSearch').on();</code></pre>
+
+<footer>
+	created by <a href="http://kerotaa.github.io">kerotaa</a>
+</footer>
+
+</div>
+
+<script src="js/jquery-2.0.2.min.js"></script>
+<script src="js/jquery.expand-search.js"></script>
+<script>
+	$(function() {
+		$('.search-box').first().expandSearch();
+	});
+</script>
+
+</body>
+</html>
